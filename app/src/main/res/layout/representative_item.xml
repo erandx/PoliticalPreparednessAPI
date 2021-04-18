@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="representative"
+            type="com.example.android.politicalpreparedness.representative.model.Representative" />
+        <variable
+            name="clickListener"
+            type="com.example.android.politicalpreparedness.representative.adapter.RepresentativeClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small">
+
+        <ImageView
+            android:id="@+id/representative_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/representative_image" />
+
+        <TextView
+            android:id="@+id/representative_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_marginStart="@dimen/spacing_small"
+            app:layout_constraintStart_toEndOf="@+id/representative_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/representative_title" />
+
+        <TextView
+            android:id="@+id/representative_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toEndOf="@+id/representative_image"
+            app:layout_constraintTop_toBottomOf="@id/representative_title"
+            tools:text="@string/representative_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            app:layout_constraintStart_toEndOf="@id/representative_image"
+            app:layout_constraintTop_toBottomOf="@id/representative_name"
+            tools:text="@string/representative_party"/>
+
+        <ImageView
+            android:id="@+id/twitter_icon"
+            android:layout_width="@dimen/social_small"
+            android:layout_height="@dimen/social_small"
+            android:src="@drawable/ic_twitter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/twitter_image" />
+
+        <ImageView
+            android:id="@+id/facebook_icon"
+            android:layout_width="@dimen/social_small"
+            android:layout_height="@dimen/social_small"
+            android:src="@drawable/ic_facebook"
+            android:layout_marginEnd="@dimen/spacing_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/twitter_image"
+            android:contentDescription="@string/facebook_image" />
+
+        <ImageView
+            android:id="@+id/www_icon"
+            android:layout_width="@dimen/social_small"
+            android:layout_height="@dimen/social_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:src="@drawable/ic_www"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/facebook_image"
+            android:contentDescription="@string/website_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

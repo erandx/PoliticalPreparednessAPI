@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Political Preparedness</string>
+    <string name="ballot_logo_image">Ballot Logo Image</string>
+    <string name="upcoming_elections_button">UPCOMING ELECTIONS</string>
+    <string name="find_my_representatives_button">Find My Representatives</string>
+    <string name="representative_name">Jon Xhelilaj</string>
+    <string name="representative_title">U.S. Senator</string>
+    <string name="representative_party">Democratic Party</string>
+    <string name="twitter_image">Twitter Image</string>
+    <string name="facebook_image">Facebook Image</string>
+    <string name="website_image">Website Image</string>
+    <string name="representative_image">Representative Image</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="city_text">City</string>
+    <string name="zip_code">Zip</string>
+    <string name="use_my_location">Use My location</string>
+    <string name="find_my_representatives">Find My Representatives</string>
+    <string name="my_representatives">My Representatives</string>
+    <string name="representative_search">Representative Search</string>
+    <string name="upcoming_elections_textView">VIP Test Election</string>
+    <string name="upcoming_elections_date">Sun Jun 06 00:00:00 EDT 2021</string>
+    <string name="saved_elections_header">Saved Elections</string>
+    <string name="upcoming_elections_header">Upcoming Elections</string>
+    <string name="ballout_information_info_text">Ballout Information</string>
+    <string name="voting_locations_info_text">Voting Locations</string>
+    <string name="follow_election">Follow Election</string>
+
+</resources>
