@@ -63,7 +63,7 @@
             android:src="@drawable/ic_twitter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/twitter_image" />
+            android:contentDescription="@string/twitter_icon" />
 
         <ImageView
             android:id="@+id/facebook_icon"
@@ -72,8 +72,8 @@
             android:src="@drawable/ic_facebook"
             android:layout_marginEnd="@dimen/spacing_small"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/twitter_image"
-            android:contentDescription="@string/facebook_image" />
+            app:layout_constraintEnd_toStartOf="@+id/twitter_icon"
+            android:contentDescription="@string/facebook_icon" />
 
         <ImageView
             android:id="@+id/www_icon"
@@ -82,8 +82,8 @@
             android:layout_marginEnd="@dimen/spacing_small"
             android:src="@drawable/ic_www"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/facebook_image"
-            android:contentDescription="@string/website_image" />
+            app:layout_constraintEnd_toStartOf="@id/facebook_icon"
+            android:contentDescription="@string/website_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

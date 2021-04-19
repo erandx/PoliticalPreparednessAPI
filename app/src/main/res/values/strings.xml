@@ -7,9 +7,9 @@
     <string name="representative_name">Jon Xhelilaj</string>
     <string name="representative_title">U.S. Senator</string>
     <string name="representative_party">Democratic Party</string>
-    <string name="twitter_image">Twitter Image</string>
-    <string name="facebook_image">Facebook Image</string>
-    <string name="website_image">Website Image</string>
+    <string name="twitter_icon">Twitter Image</string>
+    <string name="facebook_icon">Facebook Image</string>
+    <string name="website_icon">Website Image</string>
     <string name="representative_image">Representative Image</string>
     <string name="address_line_1">Address Line 1</string>
     <string name="address_line_2">Address Line 2</string>
