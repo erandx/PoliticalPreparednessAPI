@@ -15,7 +15,6 @@
         android:layout_height="match_parent"
         tools:context="com.example.android.politicalpreparedness.MainActivity">
 
-
         <TextView
             android:id="@+id/upcoming_elections_header"
             style="@style/title_style"

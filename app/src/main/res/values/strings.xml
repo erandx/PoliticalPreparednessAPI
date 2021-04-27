@@ -23,8 +23,12 @@
     <string name="upcoming_elections_date">Sun Jun 06 00:00:00 EDT 2021</string>
     <string name="saved_elections_header">Saved Elections</string>
     <string name="upcoming_elections_header">Upcoming Elections</string>
-    <string name="ballout_information_info_text">Ballout Information</string>
-    <string name="voting_locations_info_text">Voting Locations</string>
+    <string name="ballot_info_text"><u>Ballot Information</u></string>
+    <string name="no_ballot_text_available"><u>No ballot Available</u></string>
+    <string name="voting_location_info_text"><u>Voting Locations</u></string>
+    <string name="no_voting_text_available"><u>No Location Available</u></string>
     <string name="follow_election">Follow Election</string>
+    <string name="unfollow_election">Unfollow Election</string>
+    <string name="election_information">Election Information</string>
 
 </resources>

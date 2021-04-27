@@ -30,7 +30,7 @@
         android:name="com.example.android.politicalpreparedness.election.VoterInfoFragment"
         android:label="fragment_voter_info">
         <argument
-            android:name="election"
+            android:name="arg_election"
             app:argType="com.example.android.politicalpreparedness.network.models.Election" />
     </fragment>
     <fragment

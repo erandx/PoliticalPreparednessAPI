@@ -3,6 +3,7 @@ package com.example.android.politicalpreparedness.network
 import com.example.android.politicalpreparedness.network.jsonadapter.ElectionAdapter
 import com.example.android.politicalpreparedness.network.models.Election
 import com.example.android.politicalpreparedness.network.models.ElectionResponse
+import com.example.android.politicalpreparedness.network.models.RepresentativeResponse
 import com.example.android.politicalpreparedness.network.models.VoterInfoResponse
 import com.example.android.politicalpreparedness.representative.model.Representative
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -39,17 +40,17 @@ private val retrofit = Retrofit.Builder()
 interface CivicsApiService {
     //Done: Add elections API Call
     // Ex. https://www.googleapis.com/civicinfo/v2/elections?..
-    @GET("/elections")
+    @GET("elections")
     suspend fun getElections(): ElectionResponse
 
     //Done: Add voterinfo API Call
-    @GET("/voterinfo")
+    @GET("voterinfo")
     suspend fun getVoterInfo(@Query("address") address: String,
-                             @Query("electionId")electionId: Long): VoterInfoResponse
+                             @Query("electionId")electionId: Int): VoterInfoResponse
 
     //Done: Add representatives API Call
-    @GET("/representatives")
-    suspend fun getRepresentatives(@Query("address") address: String): Representative
+    @GET("representatives")
+    suspend fun getRepresentatives(@Query("address") address: String): RepresentativeResponse
 }
 
 object CivicsApi {

@@ -14,6 +14,7 @@ import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentElectionBinding
 import com.example.android.politicalpreparedness.election.adapter.ElectionListAdapter
 import com.example.android.politicalpreparedness.network.jsonadapter.ElectionAdapter
+import com.example.android.politicalpreparedness.network.models.Election
 
 class ElectionsFragment: Fragment() {
 
@@ -39,10 +40,11 @@ class ElectionsFragment: Fragment() {
 
         //Done: Link elections to voter info
         viewModel.navigateToUpcomingElection.observe(viewLifecycleOwner, Observer { election ->
-            if(election != null)
-                this.findNavController().navigate(ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(election))
-            viewModel.displayElectionDetailsComplete()
-            Log.d(TAG, "${election.id}, ${election.name}, ${election.division}")
+            election?.let {
+                this.findNavController().navigate(ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(it))
+                viewModel.displayElectionDetailsComplete()
+                Log.d(TAG, "${election?.id}, ${election?.name}, ${election?.division}")
+            }
         })
 
         //Done: Initiate Election recycler + Followed recycler adapters
@@ -57,14 +59,25 @@ class ElectionsFragment: Fragment() {
         viewModel.displayElectionDetails(savedElection)
         })
 
+        //HasStableIds will not cause any blinking in our UI
         savedAdapter.setHasStableIds(true)
         binding.recyclerSavedElections.adapter = savedAdapter
 
+        //Done: Refresh adapters when fragment loads
+        viewModel.upcomingElections.observe(viewLifecycleOwner, Observer { elections ->
+            elections?.apply {
+                electionAdapter.submitList(elections)
+            }
+        })
+
+        viewModel.followedElections.observe(viewLifecycleOwner, Observer { elections ->
+            elections?.apply {
+                savedAdapter.submitList(elections)
+            }
+        })
+
         return binding.root
     }
-
-    //TODO: Refresh adapters when fragment loads
-
 
 }
 private const val TAG = "ElectionsFragment"
