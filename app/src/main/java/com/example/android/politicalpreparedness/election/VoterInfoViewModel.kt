@@ -49,6 +49,7 @@ class VoterInfoViewModel(application: Application, private val election: Electio
     init {
         viewModelScope.launch {
             getVoterInfo()
+            _followedElection.value = electionsRepository.isSaved(election)
         }
     }
 
@@ -63,7 +64,7 @@ class VoterInfoViewModel(application: Application, private val election: Electio
         }
     }
 
-    private val _followedElection = MutableLiveData<Boolean>()
+    private val _followedElection = MutableLiveData<Boolean>(true)
     val followedElection: LiveData<Boolean>
         get() = _followedElection
     //TODO: cont'd -- Populate initial state of save button to reflect proper action based on election saved status
@@ -71,5 +72,4 @@ class VoterInfoViewModel(application: Application, private val election: Electio
     /**
      * Hint: The saved state can be accomplished in multiple ways. It is directly related to how elections are saved/removed from the database.
      */
-
 }
