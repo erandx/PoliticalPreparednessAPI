@@ -15,8 +15,6 @@ import com.example.android.politicalpreparedness.network.models.Election
 
 class VoterInfoFragment : Fragment() {
 
-    private val args: VoterInfoFragmentArgs by navArgs()
-
     private lateinit var viewModel: VoterInfoViewModel
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -33,7 +31,6 @@ class VoterInfoFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        //TODO: Populate voter info -- hide views without provided data.
         /**
         Hint: You will need to ensure proper data is provided from previous fragment.
          */

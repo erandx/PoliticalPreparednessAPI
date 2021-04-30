@@ -49,8 +49,6 @@ class VoterInfoViewModel(application: Application, private val election: Electio
     init {
         viewModelScope.launch {
             getVoterInfo()
-            _followedElection.value = electionsRepository.isSaved(election)
-
         }
     }
 
