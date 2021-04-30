@@ -8,11 +8,11 @@ import com.example.android.politicalpreparedness.network.models.Election
 import java.lang.IllegalArgumentException
 
 //TODO: Create Factory to generate VoterInfoViewModel with provided election datasource
-class VoterInfoViewModelFactory(val application: Application): ViewModelProvider.Factory {
+class VoterInfoViewModelFactory(val application: Application, val election: Election): ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(VoterInfoViewModel::class.java)){
-            return VoterInfoViewModel(application) as T
+            return VoterInfoViewModel(application, election) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }

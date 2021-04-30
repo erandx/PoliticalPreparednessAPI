@@ -39,7 +39,7 @@ class DetailFragment : Fragment() {
     }
 
     companion object {
-        //TODO: Add Constant for Location request
+        //Done: Add Constant for Location request
         const val REQUEST_LOCATION_PERMISSION = 1
     }
 
@@ -72,7 +72,7 @@ class DetailFragment : Fragment() {
             }
         })
 
-
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         return binding.root
     }
 
@@ -120,7 +120,7 @@ class DetailFragment : Fragment() {
     private fun getLocation() {
         //Done: Get location from LocationServices
         if (checkLocationPermissions()) {
-            LocationServices.getFusedLocationProviderClient(requireContext()).lastLocation.addOnSuccessListener {
+            fusedLocationProviderClient.lastLocation.addOnSuccessListener {
                 viewModel.setAddressFromGeoLocation(geoCodeLocation(it))
                 viewModel.getRepresentatives(viewModel.address.value.toString())
             }
